@@ -36,7 +36,7 @@ Given the database schema, here is the SQL query that answers [QUESTION]{questio
 """
     
     payload = {
-        "model": "defog/sqlcoder-8b",
+        "model": "defog/llama-3-sqlcoder-8b",
         "prompt": prompt,
         "max_tokens": 512,
         "temperature": 0.0,
