@@ -1,6 +1,6 @@
-# SQLCoder-8B Local Deployment Guide
+# SQLCoder-8B (Llama 3) Local Deployment Guide
 
-Deploy SQLCoder-8B with FP16 precision using vLLM on Ubuntu.
+Deploy `defog/llama-3-sqlcoder-8b` with FP16 precision using vLLM on Ubuntu.
 
 ## System Requirements
 
@@ -52,7 +52,7 @@ curl http://localhost:8000/v1/models
 curl -X POST http://localhost:8000/v1/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "defog/sqlcoder-8b",
+    "model": "defog/llama-3-sqlcoder-8b",
     "prompt": "### Task\nGenerate a SQL query to answer: How many users signed up last month?\n\n### Schema\nCREATE TABLE users (id INT, name VARCHAR, created_at TIMESTAMP);\n\n### SQL\n",
     "max_tokens": 256,
     "temperature": 0
@@ -67,7 +67,7 @@ import requests
 response = requests.post(
     "http://localhost:8000/v1/completions",
     json={
-        "model": "defog/sqlcoder-8b",
+        "model": "defog/llama-3-sqlcoder-8b",
         "prompt": "Your prompt here...",
         "max_tokens": 256,
         "temperature": 0
