@@ -96,7 +96,7 @@ echo "This may take a while depending on your internet speed (~16GB download)...
 python3 -c "
 from huggingface_hub import snapshot_download
 snapshot_download(
-    repo_id='defog/sqlcoder-8b',
+    repo_id='defog/llama-3-sqlcoder-8b',
     local_dir_use_symlinks=False
 )
 print('✅ Model downloaded successfully!')
@@ -120,7 +120,7 @@ echo "=============================================="
 echo "Starting SQLCoder-8B Server"
 echo "=============================================="
 echo ""
-echo "Model: defog/sqlcoder-8b"
+echo "Model: defog/llama-3-sqlcoder-8b"
 echo "Precision: FP16 (float16)"
 echo "API: OpenAI-compatible at http://localhost:8000"
 echo ""
@@ -133,7 +133,7 @@ echo ""
 
 # Start vLLM server with SQLCoder-8B
 python -m vllm.entrypoints.openai.api_server \
-    --model defog/sqlcoder-8b \
+    --model defog/llama-3-sqlcoder-8b \
     --dtype float16 \
     --host 0.0.0.0 \
     --port 8000 \
